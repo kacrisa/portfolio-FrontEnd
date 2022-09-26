@@ -11,6 +11,10 @@ import { ProyectosComponent } from './Componentes/proyectos/proyectos.component'
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { LogInComponent } from './Componentes/log-in/log-in.component';
 import { HttpClientModule} from '@angular/common/http';
+import { LogOutComponent } from './Componentes/log-out/log-out.component';
+import { SobreMiAdminComponent } from './Componentes/sobre-mi-admin/sobre-mi-admin.component';
+import { ExperienciaComponent } from './Componentes/experiencia/experiencia.component';
+import { ExperienciaAdminComponent } from './Componentes/experiencia-admin/experiencia-admin.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { HttpClientModule} from '@angular/common/http';
     SkillsComponent,
     ProyectosComponent,
     FooterComponent,
-    LogInComponent
+    LogInComponent,
+    LogOutComponent,
+    SobreMiAdminComponent,
+    ExperienciaComponent,
+    ExperienciaAdminComponent
   ],
   imports: [
     BrowserModule,

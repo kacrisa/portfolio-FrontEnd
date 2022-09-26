@@ -1,0 +1,33 @@
+<!-- ARTICLE SOBRE MI - ADMIN  -->
+<article class="about container-fluid" id="about">
+
+    <!-- BANNER! -->
+    <div class="row  ">
+        <div class="col-12 px-0">
+            <img src="assets/imagenes/wtech4.png" class="img-fluid"  alt="Woman in Tech">
+        </div>
+    </div>
+
+    <!-- FOTO PERFIL - NOMBRE Y BREVE RESUMO -->
+    <div class="row c-foto-perfil">
+        <div class="col-3">
+            <img src="assest/imagenes/kacrisa.png" id="foto-perfil" class="rounded-circle border border-1" alt="Kacrisa"> <button type="button" class="btn btn-light align-self-end"> <i class="bi bi-pencil-square"></i> </button>
+            
+        </div>
+
+        <div class="col-9 mt-2 mt-sm-4">
+            <h2>Karen Cristiane dos Santos <button type="button" class="btn btn-light align-self-end"><i class="bi bi-pencil-square"></i></button></h2>
+            <p class="mb-0" id="text-acercade"> Full Stack Developer Jr
+                <br>
+                Buenos Aires - Argentina
+                <br>
+                Luego de dedicarme 6 años a soporte, ahora emprendo un viaje en la programación!
+                <button type="button" class="btn btn-light align-self-end" onclick="cambiar_parrafo()"> <i class="bi bi-pencil-square"></i></button> 
+            </p>
+            <input id="edit-acercade" type="text" oninput="myFunction2(this.value)" style="display:none">
+            <input id="file1" type="file" onchange="showFile(this)">
+        </div>
+        
+    </div>   
+
+</article>
