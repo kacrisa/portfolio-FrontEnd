@@ -15,6 +15,9 @@ import { LogOutComponent } from './Componentes/log-out/log-out.component';
 import { SobreMiAdminComponent } from './Componentes/sobre-mi-admin/sobre-mi-admin.component';
 import { ExperienciaComponent } from './Componentes/experiencia/experiencia.component';
 import { ExperienciaAdminComponent } from './Componentes/experiencia-admin/experiencia-admin.component';
+import { HomeComponent } from './Componentes/home/home.component';
+import { PageNotFoundComponent } from './Componentes/page-not-found/page-not-found.component';
+import { AdminComponent } from './Componentes/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { ExperienciaAdminComponent } from './Componentes/experiencia-admin/exper
     LogOutComponent,
     SobreMiAdminComponent,
     ExperienciaComponent,
-    ExperienciaAdminComponent
+    ExperienciaAdminComponent,
+    HomeComponent,
+    PageNotFoundComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
