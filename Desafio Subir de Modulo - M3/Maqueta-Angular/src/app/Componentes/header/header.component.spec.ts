@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SobreMiAdminComponent } from './sobre-mi-admin.component';
+import { HeaderComponent } from './header.component';
 
-describe('SobreMiAdminComponent', () => {
-  let component: SobreMiAdminComponent;
-  let fixture: ComponentFixture<SobreMiAdminComponent>;
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SobreMiAdminComponent ]
+      declarations: [ HeaderComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SobreMiAdminComponent);
+    fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
