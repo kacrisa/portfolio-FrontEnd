@@ -19,8 +19,9 @@
                 
                 <!-- Login: -->
                 
-                <app-log-in></app-log-in>
-            
+                <app-log-in *ngIf="!isAdmin"></app-log-in>
+                <app-log-out *ngIf="isAdmin"></app-log-out>
+             
             </div>
         </div>
     </div>

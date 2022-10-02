@@ -8,6 +8,8 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 })
 export class FooterComponent implements OnInit {
 
+  anio: number = new Date().getFullYear();
+  
   constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {

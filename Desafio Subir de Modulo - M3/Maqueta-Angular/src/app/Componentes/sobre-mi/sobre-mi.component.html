@@ -2,23 +2,23 @@
 <article class="about container-fluid" id="about">
 
     <!-- BANNER! -->
-    <div class="row  ">
+    <div class="row ">
         <div class="col-12 px-0">
-            <img src="assets/imagenes/wtech4.png" class="img-fluid"  alt="Woman in Tech">
+            <img [src]="sobreMi.backImage" class="img-fluid"  alt="Woman in Tech">
         </div>
     </div>
 
     <!-- FOTO PERFIL - NOMBRE Y BREVE RESUMO -->
     <div class="row c-foto-perfil">
         <div class="col-3">
-            <img src="assets/imagenes/kacrisa.png" id="foto-perfil" class="rounded-circle border border-1" alt="Kacrisa">
+            <img [src]="sobreMi.image" id="foto-perfil" class="rounded-circle border border-1" alt="foto de perfil">
         </div>
 
         <div class="col-9 mt-2 mt-sm-4">
-            <h2>Karen Cristiane dos Santos</h2>
-            <p class="mb-0">Full Stack Developer Jr</p>
-            <p>Buenos Aires - Argentina</p>
-            <p>Luego de dedicarme 6 años a soporte, ahora emprendo un viaje en la programación!</p>    
+            <h2>{{sobreMi.name}}</h2>
+            <p class="mb-0">{{sobreMi.position}}</p>
+            <p>{{sobreMi.city}}</p>
+            <p>{{sobreMi.bio}}</p>    
         </div>
         
     </div>   

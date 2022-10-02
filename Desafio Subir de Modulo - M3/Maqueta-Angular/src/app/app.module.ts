@@ -17,6 +17,7 @@ import { HomeComponent } from './Componentes/home/home.component';
 import { PageNotFoundComponent } from './Componentes/page-not-found/page-not-found.component';
 import { HeaderComponent } from './Componentes/header/header.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

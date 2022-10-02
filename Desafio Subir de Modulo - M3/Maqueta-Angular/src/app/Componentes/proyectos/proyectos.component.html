@@ -4,16 +4,14 @@
         <div class="col mt-2 mt-sm-4 ms-1 ms-sm-2 ms-md-5">
             <h3> Proyectos</h3>
         </div>
-        <div class="row">
+        <div class="row" *ngFor="let project of projects">
             <div class="col-2 text-center align-self-center">
-                <img src="assets/imagenes/logo_ap_b.png" width="60" class="img-fluid" alt=" ">
+                <img [src]="project.image" width="60" class="img-fluid" alt=" ">
             </div>
             <div class="col">
-                <h5> Argentina Programa </h5>
-                <p> 2022 - Actualidad</p>
-                <p>Aplicación web full stack con el propósito de ser un portfolio web. Con arquitectura distribuida, diseño de interface (front end) que muestra la información, una base de datos que almacena los datos, APIs necesarias para proveer a través de internet la información (back end). 
-                Herramientas, lenguajes y protocolos utilizados: Angular, HTML, CSS, Boostrap, Spring Boot > Api Rest, Apache Tomcat, MySQL, Visul Studio Code, GIT, GitHub.
-                </p>
+                <h5>{{project.name}} </h5>
+                <p>{{project.date}}</p>
+                <p>{{project.description}}</p>
             </div>
         </div>
     </div>
