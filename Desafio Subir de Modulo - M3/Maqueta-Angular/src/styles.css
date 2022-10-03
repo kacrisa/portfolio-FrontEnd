@@ -3,12 +3,6 @@
     
 }
 
-/* .nav-font{
-    /* font-family: 'Silkscreen', cursive;
-    font-family: 'Encode Sans', sans-serif;
-} 
-*/
-
 nav.navbar, .gradient-nav{
     background: rgb(15,2,2);
     background: linear-gradient(90deg, rgba(15,2,2,0.9836309523809523) 24%, rgba(254,16,133,1) 64%);
