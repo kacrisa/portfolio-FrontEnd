@@ -28,7 +28,7 @@ export class AuthService {
         if (response.token !== null) {
           //Guardamos el token
           localStorage.setItem('token', response.token);
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/']);
         }
       }
     );
