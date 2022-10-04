@@ -14,7 +14,6 @@ export class SobreMiComponent implements OnInit {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatos().subscribe(data => {
-      console.log(data);
       this.sobreMi=data.profile;
     });
   }

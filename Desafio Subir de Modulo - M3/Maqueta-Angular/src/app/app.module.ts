@@ -16,7 +16,8 @@ import { ExperienciaComponent } from './Componentes/experiencia/experiencia.comp
 import { HomeComponent } from './Componentes/home/home.component';
 import { PageNotFoundComponent } from './Componentes/page-not-found/page-not-found.component';
 import { HeaderComponent } from './Componentes/header/header.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './Componentes/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +33,15 @@ import { HeaderComponent } from './Componentes/header/header.component';
     ExperienciaComponent,
     HomeComponent,
     PageNotFoundComponent,
-    HeaderComponent
+    HeaderComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

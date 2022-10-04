@@ -1,30 +1,47 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-import { User } from './user';
+
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-  private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  //URL de nuestra api
+  private strUrlApi:string;
 
-  get isLoggedIn() {
-    return this.loggedIn.asObservable();
+  //Inyectar dependencias en el constructor
+  constructor(private http:HttpClient, private router:Router) {
+    //Ruta de nuestro archivo json(en nuestro ejemplo local)
+    this.strUrlApi= '../assets/data/user.json';
+  }
+  //Login Udemy:
+  // sendCredentials(email:string, password:string): void {
+  //   console.log(email,password);
+  // }
+
+  public loginSimple(email:string, password:string): void {
+    //Llamada a la API
+    this.http.get(this.strUrlApi).subscribe(
+      (response:any) => {
+        if (response.token !== null) {
+          //Guardamos el token
+          localStorage.setItem('token', response.token);
+          this.router.navigate(['/dashboard']);
+        }
+      }
+    );
+  }
+  
+  public logout(): void {
+    //Al cerrar sesion eliminamos al token
+    localStorage.removeItem('token');
+    //Redireccionar
+    this.router.navigate(['/']);
   }
 
-  constructor(private router: Router) {}
-
-    login(user: User) {
-    if (user.userName !== '' && user.password !== '' ) {
-      this.loggedIn.next(true);
-      this.router.navigate(['/']);
-    }
-  }
-
-  logout() {
-    this.loggedIn.next(false);
-    this.router.navigate(['/login']);
+  public isUserLogIn(): boolean {
+    return localStorage.getItem('token') !== null;
   }
 }
