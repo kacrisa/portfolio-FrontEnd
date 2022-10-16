@@ -7,11 +7,13 @@
 
             <div class="row">
                 <div class="col-6 pb-2" *ngFor="let skill of skills">
-                    {{skill.name}}
+                    {{skill.name}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal>
                     <div class="progress">
                         <div class="progress-bar {{skill.color}}" role="progressbar" aria-label="Success example" [style]="'width: ' + skill.percentage" attr.aria-valuenow="{{skill.percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
+                    <app-admin-modal *ngIf="isAdmin" ></app-admin-modal>
                 </div>
+                
             </div>
         </div>
 
@@ -20,9 +22,12 @@
 
             <div class="row" *ngFor="let lang of languages">
                 <div class="col-4 col-md-12">{{lang.name}} - {{lang.proficiency}}
+                    <app-admin-modal *ngIf="isAdmin" ></app-admin-modal>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" aria-label="Success striped example" [style]="'width:' + lang.percentage" attr.aria-valuenow="{{lang.percentage}}" aria-valuemin="0" aria-valuemax="100">{{lang.percentage}}</div>
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" aria-label="Success striped example" [style]="'width:' + lang.percentage" attr.aria-valuenow="{{lang.percentage}}" aria-valuemin="0" aria-valuemax="100">{{lang.percentage}} </div>
+                        
                     </div>
+                    <app-admin-modal *ngIf="isAdmin" ></app-admin-modal>
                 </div>
             </div>
 

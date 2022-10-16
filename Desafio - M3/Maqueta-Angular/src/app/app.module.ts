@@ -17,6 +17,8 @@ import { HomeComponent } from './Componentes/home/home.component';
 import { PageNotFoundComponent } from './Componentes/page-not-found/page-not-found.component';
 import { HeaderComponent } from './Componentes/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminModalComponent } from './Componentes/admin-modal/admin-modal.component';
+import { AdminFilesComponent } from './Componentes/admin-files/admin-files.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     PageNotFoundComponent,
     HeaderComponent,
+    AdminModalComponent,
+    AdminFilesComponent,
   ],
   imports: [
     BrowserModule,

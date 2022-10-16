@@ -1,9 +1,9 @@
 {
   "profile": {
     "name": "Karen Cristiane dos Santos",
-    "backImage": "assets/imagenes/wtech4.png",
-    "image": "assets/imagenes/kacrisa.png",
     "position": "Full Stack Developer Jr",
+    "image": "assets/imagenes/kacrisa.png",
+    "backImage": "assets/imagenes/wtech4.png",
     "city": "Buenos Aires - Argentina",
     "bio": "Luego de dedicarme 6 años a soporte, ahora emprendo un viaje en la programación!"
   },
