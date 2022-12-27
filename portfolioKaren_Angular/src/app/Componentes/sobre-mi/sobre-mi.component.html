@@ -1,0 +1,35 @@
+<!-- ARTICLE SOBRE MI    -->
+<article class="about container-fluid" id="about">
+
+    <!-- BANNER! -->
+    <div class="row ">
+        <div class="col-12 px-0">
+            <app-admin-files *ngIf="isAdmin" ></app-admin-files>
+            <img [src]="sobreMi.backImage" class="img-fluid"  alt="Woman in Tech">
+            
+        </div>
+    </div>
+
+    <!-- FOTO PERFIL - NOMBRE Y BREVE RESUMO -->
+    <div class="row c-foto-perfil">
+        <div class="col-3">
+            <img [src]="sobreMi.image" id="foto-perfil" class="rounded-circle border border-1" alt="foto de perfil">
+            <app-admin-files *ngIf="isAdmin" ></app-admin-files>
+        </div>
+
+        <div class="col-9 mt-2 mt-sm-4">
+            <h2>{{sobreMi.name}} 
+                <app-admin-modal *ngIf="isAdmin" > 
+                    Test ng-content - estoy en el sobre-mi
+
+                </app-admin-modal>  
+            </h2> 
+            <p class="mb-0">{{sobreMi.position}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p>
+            <p>{{sobreMi.city}}<app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p> 
+            <p>{{sobreMi.bio}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p>
+            
+        </div>
+        
+    </div>   
+
+</article>

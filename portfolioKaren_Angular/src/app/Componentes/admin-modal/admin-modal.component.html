@@ -1,0 +1,27 @@
+<!-- Button -->
+<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#adminModal">
+    <i class="bi bi-pencil-square"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="adminModal" tabindex="-1" aria-labelledby="adminModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title fs-5" id="adminModal">Agregar nueva información:</p>
+                <ng-content></ng-content>
+                
+            </div>
+            <div class="modal-body">
+                <textarea name="nuevaInfo" id="admin" cols="30" rows="2"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm">Guardar</button>
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->

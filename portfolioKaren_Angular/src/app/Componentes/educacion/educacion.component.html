@@ -1,0 +1,28 @@
+<article class="container-fluid" id="education">
+    <hr class="lila">
+    <div class="row">
+        <div class="col mt-2 mt-sm-4 ms-1 ms-sm-2 ms-md-5">
+            <h3>Educación</h3>
+        </div>
+    </div>
+        
+    <div class="row" *ngFor="let edu of education; last as isLast">
+        <div class="col-2 text-center align-self-center">
+            <img [src]="edu.image" width="70" class="img-fluid" alt="Argentina Programa">
+            <app-admin-files *ngIf="isAdmin" ></app-admin-files>
+        </div>
+
+        <div class="col">
+            <h5> {{edu.school}} </h5>
+            <div class="row">
+                <div class="col-12 col-md-6 mt-2" *ngFor="let course of edu.courses">
+                    <h6> {{course.title}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </h6>
+                    <p>{{course.date}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p>
+                    <p>{{course.description}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p>
+                </div>
+            </div>
+        </div>
+        <hr class="border border-primary border-1 opacity-25 mx-5" *ngIf="!isLast">
+    </div>
+
+</article>
