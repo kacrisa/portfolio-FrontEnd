@@ -11,16 +11,11 @@ export class ProyectosComponent implements OnInit {
 
   projects:any;
 
-  constructor(private datosPortfolio:PortfolioService, private auth:AuthService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.projects=data.projects;
-    });
+
   }
 
-  public get isAdmin(): boolean{
-    return this.auth.isUserLogIn();
-  }
 
 }

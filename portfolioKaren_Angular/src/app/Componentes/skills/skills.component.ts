@@ -12,16 +12,11 @@ export class SkillsComponent implements OnInit {
   skills:any;
   languages:any
 
-  constructor(private datosPortfolio:PortfolioService, private auth:AuthService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.skills=data.skills;
-      this.languages=data.languages
-    });
+
   }
 
-  public get isAdmin(): boolean{
-    return this.auth.isUserLogIn();
-  }
+
 }

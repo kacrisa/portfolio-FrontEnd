@@ -1,3 +1,4 @@
+import { Persona } from './../../model/persona.model';
 
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/servicios/portfolio_data/portfolio.service';
@@ -10,18 +11,13 @@ import { AuthService } from 'src/app/servicios/auth/auth.service';
 })
 export class SobreMiComponent implements OnInit {
 
-  sobreMi:any;
+  persona: Persona = new Persona("", "", "", "", "", "", "");
 
-  constructor(private datosPortfolio:PortfolioService, private auth:AuthService) { }
+  constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.sobreMi=data.profile;
-    });
-  }
-
-  public get isAdmin(): boolean{
-    return this.auth.isUserLogIn();
+      this.persona=data});
   }
 
 }

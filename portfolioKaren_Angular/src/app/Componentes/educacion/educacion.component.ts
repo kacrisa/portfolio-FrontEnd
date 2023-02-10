@@ -9,18 +9,10 @@ import { AuthService } from 'src/app/servicios/auth/auth.service';
 })
 export class EducacionComponent implements OnInit {
 
-  education:any;
-
-  constructor(private datosPortfolio:PortfolioService, private auth:AuthService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.education=data.education;
-    });
-  }
 
-  public get isAdmin(): boolean{
-    return this.auth.isUserLogIn();
   }
 
 }

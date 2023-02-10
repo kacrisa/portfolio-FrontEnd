@@ -1,4 +1,5 @@
 <article class="container-fluid" id="education">
+
     <hr class="lila">
     <div class="row">
         <div class="col mt-2 mt-sm-4 ms-1 ms-sm-2 ms-md-5">
@@ -6,23 +7,28 @@
         </div>
     </div>
         
-    <div class="row" *ngFor="let edu of education; last as isLast">
+    <div class="row">
         <div class="col-2 text-center align-self-center">
-            <img [src]="edu.image" width="70" class="img-fluid" alt="Argentina Programa">
-            <app-admin-files *ngIf="isAdmin" ></app-admin-files>
+            <img src="assets/imagenes/logo_softline.jpg" width="90" class="img-fluid" alt="logo Softline">
         </div>
 
         <div class="col">
-            <h5> {{edu.school}} </h5>
-            <div class="row">
-                <div class="col-12 col-md-6 mt-2" *ngFor="let course of edu.courses">
-                    <h6> {{course.title}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </h6>
-                    <p>{{course.date}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p>
-                    <p>{{course.description}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p>
-                </div>
-            </div>
+            <h5>Delivery Engineer / Softline </h5>
+            <p>Abril/2022 – Actualidad</p>
+            <p>La empresa comercializa soluciones en la nube, mi rol es brindar soporte para los clientes que lo necesiten. En su mayoría para los productos de Microsoft (M365, Azure).</p>
         </div>
-        <hr class="border border-primary border-1 opacity-25 mx-5" *ngIf="!isLast">
     </div>
+    <hr class="border border-primary border-1 opacity-25 mx-5">
+    <div class="row">
+        <div class="col-2 text-center align-self-center">
+            <img src="assets/imagenes/logo_axa.png" width="60" class="img-fluid" alt="Logo Axa Assistance">
+        </div>
+        <div class="col">
+            <h5>Técnico HelpDesk / Axa Partners </h5>
+            <p>Febrero/2018 – Febrero/2022</p>
+            <p>Altas, bajas y modificaciones de accesos en los sistemas de la empresa. Soporte técnico de software,cliente/servidor. Experiencia práctica con Windows, Active Directory, Office 365, AVAYA , ServiceNow, Airwatch,Salesforce y gestión de incidentes críticos. Atención trilingüe (inglés/español/portugués) para países de América.</p>
+        </div>
+    </div>        
+
 
 </article>

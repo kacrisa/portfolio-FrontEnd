@@ -11,16 +11,10 @@ export class ExperienciaComponent implements OnInit {
   
   jobs:any;
 
-  constructor(private datosPortfolio:PortfolioService, private auth:AuthService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.jobs=data.jobs;
-    });
-  }
-
-  public get isAdmin(): boolean{
-    return this.auth.isUserLogIn();
+ 
   }
 
 }

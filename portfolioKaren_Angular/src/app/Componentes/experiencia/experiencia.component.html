@@ -7,19 +7,24 @@
         </div>
     </div>
     
-    <div *ngFor="let job of jobs; last as isLast"> 
-        <div class="row">
-            <div class="col-2 text-center align-self-center">
-                <img [src]="job.image" width="90" class="img-fluid" alt="logo {{job.company}}">
-                <app-admin-files *ngIf="isAdmin" ></app-admin-files>
-            </div>
-            <div class="col">
-                <h5> {{job.position}} / {{job.company}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </h5>
-                <p>{{job.date}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p>
-                <p>{{job.description}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p>
-            </div>
-            <hr class="border border-primary border-1 opacity-25 mx-5" *ngIf="!isLast">
-        </div>
-        
-    </div>
+
 </article>
+ <!--  
+
+<div *ngFor="let job of jobs; last as isLast"> 
+    <div class="row">
+        <div class="col-2 text-center align-self-center">
+            <img [src]="job.image" width="90" class="img-fluid" alt="logo {{job.company}}">
+            <app-admin-files *ngIf="isAdmin" ></app-admin-files>
+        </div>
+        <div class="col">
+            <h5> {{job.position}} / {{job.company}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </h5>
+            <p>{{job.date}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p>
+            <p>{{job.description}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p>
+        </div>
+        <hr class="border border-primary border-1 opacity-25 mx-5" *ngIf="!isLast">
+    </div>
+    
+</div>
+
+-->
