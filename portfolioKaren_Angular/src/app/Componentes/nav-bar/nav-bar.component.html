@@ -19,8 +19,12 @@
                 
                 <!-- Login: -->
                 
-                <app-log-in *ngIf="!isAdmin"></app-log-in>
-                <app-log-out *ngIf="isAdmin"></app-log-out>
+                <app-log-in (click)="login()" *ngIf="!isLogged"> </app-log-in>
+
+                <!-- Log-Out: -->
+                <button type="button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#logout" (click)="onLogOut()" *ngIf="isLogged"><i class="bi bi-box-arrow-right text-white"></i> 
+                    Logout
+                </button>
              
             </div>
         </div>

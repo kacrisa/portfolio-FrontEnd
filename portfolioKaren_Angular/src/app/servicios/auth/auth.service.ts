@@ -1,3 +1,7 @@
+import { JwtDto } from './../../model/jwt-dto';
+import { LoginUsuario } from './../../model/login-usuario';
+import { Observable } from 'rxjs';
+import { NuevoUsuario } from './../../model/nuevo-usuario';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,39 +13,17 @@ import { Router } from '@angular/router';
 
 export class AuthService {
   //URL de nuestra api
-  private strUrlApi:string;
+  authURL = 'http://localhost:8080/auth/';
 
   //Inyectar dependencias en el constructor
-  constructor(private http:HttpClient, private router:Router) {
-    //Ruta de nuestro archivo json(en nuestro ejemplo local)
-    this.strUrlApi= '../assets/data/user.json';
-  }
-  //Login Udemy:
-  // sendCredentials(email:string, password:string): void {
-  //   console.log(email,password);
-  // }
+  constructor(private http:HttpClient) {}
 
-  public loginSimple(email:string, password:string): void {
-    //Llamada a la API
-    this.http.get(this.strUrlApi).subscribe(
-      (response:any) => {
-        if (response.token !== null) {
-          //Guardamos el token
-          localStorage.setItem('token', response.token);
-          this.router.navigate(['/']);
-        }
-      }
-    );
-  }
-  
-  public logout(): void {
-    //Al cerrar sesion eliminamos al token
-    localStorage.removeItem('token');
-    //Redireccionar
-    this.router.navigate(['/']);
+  public nuevo(nuevoUsuario: NuevoUsuario): Observable<any>{
+    return this.http.post<any>(this.authURL + 'nuevo', nuevoUsuario);
   }
 
-  public isUserLogIn(): boolean {
-    return localStorage.getItem('token') !== null;
+  public login(loginUsuario: LoginUsuario): Observable<JwtDto>{
+    return this.http.post<JwtDto>(this.authURL + 'login', loginUsuario);
   }
+
 }

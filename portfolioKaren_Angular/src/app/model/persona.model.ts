@@ -1,15 +1,15 @@
 export class Persona{
 
     id?: number;
-	nombre:String;
-	apellido:String;
-	ciudad:String;
-    posicion:String;
-	bio:String;
-	image:String;
-	backImage:String;
+	nombre:string;
+	apellido:string;
+	ciudad:string;
+    posicion:string;
+	bio:string;
+	image:string;
+	backImage:string;
 	
-    constructor(nombre:string, apellido:String, ciudad:String, posicion:String, bio:String, image:String, backImage:String){
+    constructor(nombre:string, apellido:string, ciudad:string, posicion:string, bio:string, image:string, backImage:string){
         this.nombre = nombre;
         this.apellido = apellido;
         this.ciudad = ciudad;

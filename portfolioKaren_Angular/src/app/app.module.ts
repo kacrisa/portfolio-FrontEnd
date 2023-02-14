@@ -11,15 +11,14 @@ import { ProyectosComponent } from './Componentes/proyectos/proyectos.component'
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { LogInComponent } from './Componentes/log-in/log-in.component';
 import { HttpClientModule} from '@angular/common/http';
-import { LogOutComponent } from './Componentes/log-out/log-out.component';
 import { ExperienciaComponent } from './Componentes/experiencia/experiencia.component';
 import { HomeComponent } from './Componentes/home/home.component';
 import { PageNotFoundComponent } from './Componentes/page-not-found/page-not-found.component';
 import { HeaderComponent } from './Componentes/header/header.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { AdminModalComponent } from './Componentes/admin-modal/admin-modal.component';
 import { AdminFilesComponent } from './Componentes/admin-files/admin-files.component';
-
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import { AdminFilesComponent } from './Componentes/admin-files/admin-files.compo
     ProyectosComponent,
     FooterComponent,
     LogInComponent,
-    LogOutComponent,
     ExperienciaComponent,
     HomeComponent,
     PageNotFoundComponent,
@@ -44,6 +42,7 @@ import { AdminFilesComponent } from './Componentes/admin-files/admin-files.compo
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
  
   ],
   providers: [],

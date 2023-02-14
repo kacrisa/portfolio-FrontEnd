@@ -1,6 +1,10 @@
+import { Router } from '@angular/router';
+import { TokenService } from './../../servicios/auth/token.service';
+import { LoginUsuario } from './../../model/login-usuario';
 import { AuthService } from 'src/app/servicios/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-log-in',
@@ -9,33 +13,42 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LogInComponent implements OnInit {
 
-  formLogin:FormGroup = new FormGroup({});
+  isLogged = false;
+  isLoginFail = false;
+  loginUsuario!: LoginUsuario;
+  nombreUsuario!: string;
+  password!: string;
+  roles: string[] = [] ;
+  errorMsj!: string;
 
-  constructor(private authService: AuthService) { }
+  constructor(private tokenService: TokenService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.formLogin = new FormGroup(
-      {
-        email: new FormControl('', [
-          Validators.required,
-          Validators.email
-
-        ]),
-        password: new FormControl('',[
-          Validators.required,
-          Validators.minLength(6),
-          Validators.maxLength(12)
-        ]
-        )
-      }
-    )
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      this.isLoginFail = false;
+      this.roles = this.tokenService.getAuthorities();
+    }
   }
 
-  sendLogin(): void {
-    const {email, password} = this.formLogin.value
-    this.authService.loginSimple(email, password)
+  onLogin(): void {
+    this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password); 
+
+    this.authService.login(this.loginUsuario).subscribe(data =>{
+      this.isLogged = true;
+      this.isLoginFail = false;
+      this.tokenService.setToken(data.token);
+      this.tokenService.setUserName(data.nombreUsuario);
+      this.tokenService.setAuthorities(data.authorities);
+      this.roles = data.authorities;
+      this.router.navigate([''])
+    }, err => {
+      this.isLogged = false;
+      this.isLoginFail = true;
+      this.errorMsj = err.error.mensaje;
+      console.log(this.errorMsj);
+      
+    })
   }
-
-
 
 }

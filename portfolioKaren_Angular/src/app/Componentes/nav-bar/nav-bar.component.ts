@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { TokenService } from './../../servicios/auth/token.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/servicios/auth/auth.service';
@@ -9,20 +11,27 @@ import { AuthService } from 'src/app/servicios/auth/auth.service';
 
 })
 export class NavBarComponent implements OnInit {
-  
-  constructor(private auth:AuthService) {
+  isLogged = false;
+
+  constructor(private tokenService: TokenService, private router:Router) {
     
   }
 
   ngOnInit(): void {
+    if (this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
-  public get isAdmin(): boolean{
-    return this.auth.isUserLogIn();
+  onLogOut(): void{
+    this.tokenService.logOut();
+    window.location.reload();
   }
 
-  public btnLogout(): void{
-    this.auth.logout();
+  login(){
+    this.router.navigate([''])
   }
 
 }
