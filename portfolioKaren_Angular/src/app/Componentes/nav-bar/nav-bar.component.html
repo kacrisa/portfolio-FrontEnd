@@ -19,10 +19,10 @@
                 
                 <!-- Login: -->
                 
-                <app-log-in (click)="login()" *ngIf="!isLogged"> </app-log-in>
+                <app-log-in *ngIf="!isLogged"> </app-log-in>
 
                 <!-- Log-Out: -->
-                <button type="button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#logout" (click)="onLogOut()" *ngIf="isLogged"><i class="bi bi-box-arrow-right text-white"></i> 
+                <button *ngIf="isLogged" type="button" class="btn text-white" (click)="onLogOut()" ><i class="bi bi-box-arrow-right text-white"></i> 
                     Logout
                 </button>
              

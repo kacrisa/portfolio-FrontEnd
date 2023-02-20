@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './Componentes/page-not-found/page-not-fou
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'admin', component: HomeComponent},
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent}
 
 ];

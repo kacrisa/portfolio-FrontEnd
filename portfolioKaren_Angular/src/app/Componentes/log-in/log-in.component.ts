@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { TokenService } from './../../servicios/auth/token.service';
 import { LoginUsuario } from './../../model/login-usuario';
 import { AuthService } from 'src/app/servicios/auth/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {NgForm} from '@angular/forms';
 
@@ -41,7 +41,7 @@ export class LogInComponent implements OnInit {
       this.tokenService.setUserName(data.nombreUsuario);
       this.tokenService.setAuthorities(data.authorities);
       this.roles = data.authorities;
-      this.router.navigate([''])
+      window.location.reload();
     }, err => {
       this.isLogged = false;
       this.isLoginFail = true;
@@ -50,5 +50,7 @@ export class LogInComponent implements OnInit {
       
     })
   }
+
+
 
 }

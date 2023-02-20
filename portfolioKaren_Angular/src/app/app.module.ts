@@ -18,7 +18,9 @@ import { HeaderComponent } from './Componentes/header/header.component';
 import { ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { AdminModalComponent } from './Componentes/admin-modal/admin-modal.component';
 import { AdminFilesComponent } from './Componentes/admin-files/admin-files.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { NewExperienciaComponent } from './Componentes/experiencia/new-experiencia.component';
+import { EditExperienciaComponent } from './Componentes/experiencia/edit-experiencia.component'
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { FormsModule } from '@angular/forms'
     HeaderComponent,
     AdminModalComponent,
     AdminFilesComponent,
+    NewExperienciaComponent,
+    EditExperienciaComponent,
   ],
   imports: [
     BrowserModule,
