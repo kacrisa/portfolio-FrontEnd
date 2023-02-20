@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/servicios/portfolio_data/portfolio.service';
 import { AuthService } from 'src/app/servicios/auth/auth.service';
@@ -8,7 +9,7 @@ import { AuthService } from 'src/app/servicios/auth/auth.service';
   styleUrls: ['./sobre-mi.component.css']
 })
 export class SobreMiComponent implements OnInit {
-  
+
   sobreMi:any;
 
   constructor(private datosPortfolio:PortfolioService, private auth:AuthService) { }
@@ -24,3 +25,4 @@ export class SobreMiComponent implements OnInit {
   }
 
 }
+
