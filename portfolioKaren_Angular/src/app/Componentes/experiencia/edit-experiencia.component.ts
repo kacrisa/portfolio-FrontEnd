@@ -24,10 +24,10 @@ export class EditExperienciaComponent implements OnInit {
     
     this.sExperiencia.save(this.expLab).subscribe(
       data => {
-        this.router.navigate(['']);
+        window.location.reload();
       }, err =>{
          alert("Error al modificar experiencia");
-         this.router.navigate(['']);
+        
       }
     )
   }

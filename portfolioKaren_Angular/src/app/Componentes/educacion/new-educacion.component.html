@@ -1,38 +1,38 @@
 <!-- Button -->
 <div class="row justify-content-center mt-5">
-    <div class="col-3">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#nuevaExp" > Agregar nueva experiencia laboral </button>
+    <div class="col-2">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#nuevaEdu" > Agregar nuevo estudio </button>
     </div>
 </div>
 <!-- Modal -->
 
-<div class="modal fade" id="nuevaExp" tabindex="-1" aria-labelledby="nuevaExp" aria-hidden="true">
+<div class="modal fade" id="nuevaEdu" tabindex="-1" aria-labelledby="nuevaExp" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <p class="modal-title fs-5">Agregar nueva experciencia</p>
+                <p class="modal-title fs-5">Agregar nueva info sobre educación</p>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="m-3">
                 <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                     <div class="form-group">
-                        <label for="posicionE">Nombre de la posicion:</label>
-                        <input type="text" class="form-control" id="posicionE" name="posicionE" [(ngModel)]="posicionE" required>
+                        <label for="posicionE">Nombre de la formación:</label>
+                        <input type="text" class="form-control" id="posicionE" name="posicionE" [(ngModel)]="tituloE" required>
                     </div>
                     <div class="form-group">
-                        <label for="empresaE">Nombre de la empresa:</label>
-                        <input type="text" class="form-control" id="empresaE" name="empresaE" [(ngModel)]="empresaE" required>
+                        <label for="empresaE">Nombre de la escuela:</label>
+                        <input type="text" class="form-control" id="empresaE" name="empresaE" [(ngModel)]="escuelaE" required>
                     </div>
                     <div class="form-group">
-                        <label for="dataE">Data trabajada:</label>
+                        <label for="dataE">Fecha de los estudios:</label>
                         <input type="text" class="form-control" id="dataE" name="dataE" [(ngModel)]="dataE" required>
                     </div>
                     <div class="form-group">
-                        <label for="descripcionE">Descripción del trabajo:</label>
+                        <label for="descripcionE">Descripción del aprendido:</label>
                         <input type="text" class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="descripcionE" required>
                     </div>
                     <div class="form-group">
-                        <label for="imagenE">URL de la imagen de la empresa:</label>
+                        <label for="imagenE">URL de la imagen de la escuela/curso:</label>
                         <input type="text" class="form-control" id="imagenE" name="imagenE" [(ngModel)]="imagenE" required>
                     </div>
 

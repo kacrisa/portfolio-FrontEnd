@@ -4,8 +4,6 @@
     <div class="row">
         <div class="col mt-2 mt-sm-4 ms-1 ms-sm-2 ms-md-5">
             <h3>Experiencia</h3>
-            
-            <app-new-experiencia *ngIf="isLogged"> </app-new-experiencia>
         </div>
     </div>
 
@@ -19,20 +17,24 @@
 
             <div class="col">
                 <h5> {{Experiencia.posicionE}} / {{Experiencia.empresaE}} </h5>
-                <app-edit-experiencia *ngIf="isLogged" [expLab]="Experiencia"> </app-edit-experiencia> 
+                
                 <p>{{Experiencia.dataE}} </p>
                 <p>{{Experiencia.descripcionE}} </p>
             </div>
             
             <div class=" col-2">
-                <button *ngIf="isLogged" type="button" class="btn btn-danger btn-sm" (click)="delete(Experiencia.id)"> 
-                    <i class="bi bi-trash3"> Eliminar </i>
+                <app-edit-experiencia *ngIf="isLogged" [expLab]="Experiencia" class="mx-1"> </app-edit-experiencia> 
+                <button *ngIf="isLogged" type="button" class="btn btn-danger btn-sm mx-1" (click)="delete(Experiencia.id)"> 
+                    <i class="bi bi-trash3"> </i>
                 </button>
             </div>
             
             <hr class="border border-primary border-1 opacity-25 mx-5" *ngIf="!isLast">
         </div>
         
+    </div>
+    <div>
+        <app-new-experiencia *ngIf="isLogged"> </app-new-experiencia>
     </div>
     
 
