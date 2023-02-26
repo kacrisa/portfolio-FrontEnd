@@ -8,15 +8,18 @@ import { Persona } from 'src/app/model/persona.model';
 @Injectable({
   providedIn: 'root'
 })
-export class PortfolioService {
-  URL = 'http://localhost:8080/personas/'
+export class SPersonaService {
+  URL = 'http://localhost:8080/persona/'
 
   constructor(private http:HttpClient) { }
 
-  obtenerDatos():Observable<Persona>{
-    return this.http.get<Persona>(this.URL+'buscar/perfil');
+  public lista(): Observable<Persona[]>{
+    return this.http.get<Persona[]>(this.URL + 'listar');
   }
+
+  public save(persona: Persona): Observable<any>{
+    return this.http.post<any>(this.URL + 'crear', persona);
+  }
+
+
 }
-
-
-//Chequear este ObtnerDatos, a ver si anda ahora con el /perfil
