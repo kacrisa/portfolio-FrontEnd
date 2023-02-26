@@ -2,30 +2,37 @@
 <article class="about container-fluid" id="about">
 
     <!-- BANNER! -->
-    <div class="row ">
-        <div class="col-12 px-0">
-            
-            <img [src]="persona.backImage" class="img-fluid"  alt="Woman in Tech">
-            
-        </div>
-    </div>
+    
+    <div *ngFor="let Persona of persona"> 
 
-    <!-- FOTO PERFIL - NOMBRE Y BREVE RESUMO -->
-    <div class="row c-foto-perfil">
-        <div class="col-3">
-            <img [src]="persona.image" id="foto-perfil" class="rounded-circle border border-1" alt="foto de perfil">
-            
+        <div class="row ">
+            <div class="col-12 px-0">
+                
+                <img [src]="Persona.backImage" class="img-fluid"  alt="Woman in Tech">
+                
+            </div>
         </div>
 
-        <div class="col-9 mt-2 mt-sm-4">
-            <h2>{{persona.nombre}} {{persona.apellido}} </h2> 
+        <!-- FOTO PERFIL - NOMBRE Y BREVE RESUMO -->
+        <div class="row c-foto-perfil">
 
-            <p class="mb-0">{{persona.posicion}}  </p>
-            <p>{{persona.ciudad}} </p> 
-            <p>{{persona.bio}}  </p>
-            
+            <div class="col-3">
+                <img [src]="Persona.image" id="foto-perfil" class="rounded-circle border border-1" alt="foto de perfil">
+                
+            </div>
+
+            <div class="col-7 mt-2 mt-sm-4">
+                <h2>{{Persona.nombre}} {{Persona.apellido}} </h2> 
+                <p class="mb-0">{{Persona.posicion}}  </p>
+                <p>{{Persona.ciudad}} </p> 
+                <p>{{Persona.bio}}  </p>
+                
+            </div>
+
+            <div class="col-2 mt-5">
+                <app-edit-persona *ngIf="isLogged" [expPer]="Persona" class="mx-1"> </app-edit-persona> 
+            </div>
         </div>
-        
-    </div>   
+    </div> 
 
 </article>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+
 import { Experiencia } from 'src/app/model/experiencia';
 import { SExperienciaService } from 'src/app/servicios/portfolio_data/s-experiencia.service';
 
@@ -12,8 +12,7 @@ export class EditExperienciaComponent implements OnInit {
   
   @Input() expLab: Experiencia = null;
   
-  constructor(private sExperiencia: SExperienciaService, private activatedRouter: ActivatedRoute,
-    private router: Router) { }
+  constructor(private sExperiencia: SExperienciaService) { }
 
   ngOnInit(): void {
     this.expLab = {...this.expLab};

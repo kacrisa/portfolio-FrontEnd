@@ -1,0 +1,51 @@
+<!-- Button -->
+<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" [attr.data-bs-target]="'#editProy-' + proy.id">
+    
+    <i class="bi bi-pencil-square"></i>
+</button>
+
+<!-- Modal -->
+
+<div class="modal fade" [attr.id]="'editProy-' + proy.id" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <p class="modal-title fs-5">Editar info sobre proyectos</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="m-3">
+
+                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+
+                    <div class="form-group">
+                        <label for="nombreP">Nombre del proyecto:</label>
+                        <input type="text" class="form-control" id="nombreP" name="nombreP" [(ngModel)]="proy.nombreP" required>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaP">Fechas:</label>
+                        <input type="text" class="form-control" id="fechaP" name="fechaP" [(ngModel)]="proy.fechaP" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcionP">Descripción del proyecto:</label>
+                        <input type="text" class="form-control" id="descripcionP" name="descripcionP" [(ngModel)]="proy.descripcionP" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="imagenP">Fecha de los estudios:</label>
+                        <input type="text" class="form-control" id="imagenP" name="imagenP" [(ngModel)]="proy.imagenP" required>
+                    </div>
+ 
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Actualizar</button>
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,6 +1,5 @@
 import { SEducacionService } from './../../servicios/portfolio_data/s-educacion.service';
 import { Component, OnInit, Type } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio_data/portfolio.service';
 import { AuthService } from 'src/app/servicios/auth/auth.service';
 import { Educacion } from 'src/app/model/educacion';
 import { TokenService } from 'src/app/servicios/auth/token.service';
@@ -35,7 +34,7 @@ export class EducacionComponent implements OnInit {
   }
 
   delete(id?: number){
-    if(id != undefined && confirm("Seguro desea elminar esta información?")){
+    if(id != undefined && confirm("Seguro desea eliminar esta información?")){
       this.sEducacion.delete(id).subscribe(
         data => {
           this.cargarEducacion();

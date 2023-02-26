@@ -1,5 +1,5 @@
+
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio_data/portfolio.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,10 +10,10 @@ export class FooterComponent implements OnInit {
 
   anio: number = new Date().getFullYear();
   
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos();
+    
   }
 
 }

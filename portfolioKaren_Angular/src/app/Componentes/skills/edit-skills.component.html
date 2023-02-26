@@ -1,0 +1,40 @@
+<!-- Button -->
+<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" [attr.data-bs-target]="'#editHab-' + habi.id">
+    
+    <i class="bi bi-pencil-square"></i>
+</button>
+
+<!-- Modal -->
+
+<div class="modal fade" [attr.id]="'editHab-' + habi.id" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title fs-5">Editar habilidade</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="m-3">
+                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+
+                    <div class="form-group">
+                        <label for="nombreH">Habilidade:</label>
+                        <input type="text" class="form-control" id="nombreH" name="nombreH" [(ngModel)]="habi.nombreH" required>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="porcentajeH">Porcentaje del conocimiento:</label>
+                        <input type="text" class="form-control" id="porcentajeH" name="porcentajeH" [(ngModel)]="habi.porcentajeH" required>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Actualizar</button>
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+

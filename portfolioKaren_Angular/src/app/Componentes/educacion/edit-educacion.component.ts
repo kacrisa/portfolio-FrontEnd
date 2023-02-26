@@ -12,8 +12,7 @@ export class EditEducacionComponent implements OnInit {
 
   @Input() edu: Educacion = null;
   
-  constructor(private sEducacion: SEducacionService, private activatedRouter: ActivatedRoute,
-    private router: Router) { }
+  constructor(private sEducacion: SEducacionService) { }
 
   ngOnInit(): void {
     this.edu = {...this.edu};

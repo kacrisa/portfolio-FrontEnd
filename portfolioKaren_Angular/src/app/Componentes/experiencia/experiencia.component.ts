@@ -2,7 +2,6 @@ import { Experiencia } from './../../model/experiencia';
 import { TokenService } from './../../servicios/auth/token.service';
 import { SExperienciaService } from './../../servicios/portfolio_data/s-experiencia.service';
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio_data/portfolio.service';
 import { AuthService } from 'src/app/servicios/auth/auth.service';
 
 @Component({

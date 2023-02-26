@@ -5,21 +5,34 @@
             <h3> Proyectos</h3>
         </div>
         
+        <div class="row" *ngFor="let Proyectos of proy; last as isLast">
+
+            <div class="col-2 text-center align-self-center">
+                <img [src]="Proyectos.imagenP" width="60" class="img-fluid" alt=" ">
+                
+            </div>
+
+            <div class="col">
+                <h5>{{Proyectos.nombreP}} </h5>
+                <p>{{Proyectos.fechaP}}  </p>
+                <p>{{Proyectos.descripcionP}}  </p>
+            </div>
+
+            <div class="col-2">
+                <app-edit-proyectos *ngIf="isLogged" [proy]="Proyectos" class="mx-1"> </app-edit-proyectos>
+                <button *ngIf="isLogged" type="button" class="btn btn-danger btn-sm mx-1" (click)="delete(Proyectos.id)"> 
+                   <i class="bi bi-trash3"></i>
+               </button>
+            </div>
+
+            <div class="col-12">
+                <hr class="border border-primary border-1 opacity-25" *ngIf="!isLast">
+            </div>
+
+        </div>
+
     </div>
+
+    <app-new-proyectos *ngIf="isLogged"> </app-new-proyectos>
+
 </article>
-
- <!--  
-
-<div class="row" *ngFor="let project of projects">
-    <div class="col-2 text-center align-self-center">
-        <img [src]="project.image" width="60" class="img-fluid" alt=" ">
-        <app-admin-files *ngIf="isAdmin" ></app-admin-files>
-    </div>
-    <div class="col">
-        <h5>{{project.name}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal></h5>
-        <p>{{project.date}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p>
-        <p>{{project.description}} <app-admin-modal *ngIf="isAdmin" ></app-admin-modal> </p>
-    </div>
-</div>
-
--->

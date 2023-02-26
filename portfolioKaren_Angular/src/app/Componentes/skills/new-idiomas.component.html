@@ -1,0 +1,45 @@
+<!-- Button -->
+<div class="row justify-content-center mt-5">
+    <div>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newIdi" > Agregar nuevo idioma </button>
+    </div>
+</div>
+<!-- Modal -->
+
+<div class="modal fade" id="newIdi" tabindex="-1" aria-labelledby="newIdi" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title fs-5">Agregar nuevo idioma</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="m-3">
+
+                <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+                    <div class="form-group">
+                        <label for="nombreI">Idioma:</label>
+                        <input type="text" class="form-control" id="nombreI" name="nombreI" [(ngModel)]="nombreI" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nivelI">Nivel:</label>
+                        <input type="text" class="form-control" id="nivelI" name="nivelI" [(ngModel)]="nivelI" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="porcentajeI">Porcentaje que conoces el idioma:</label>
+                        <input type="text" class="form-control" id="porcentajeI" name="porcentajeI" [(ngModel)]="porcentajeI" required>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Guardar</button>
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                    
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

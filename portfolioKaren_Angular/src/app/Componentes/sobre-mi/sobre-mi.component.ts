@@ -1,8 +1,7 @@
+import { SPersonaService } from './../../servicios/portfolio_data/s-persona.service';
 import { Persona } from './../../model/persona.model';
-
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio_data/portfolio.service';
-import { AuthService } from 'src/app/servicios/auth/auth.service';
+import { TokenService } from 'src/app/servicios/auth/token.service';
 
 @Component({
   selector: 'app-sobre-mi',
@@ -11,14 +10,30 @@ import { AuthService } from 'src/app/servicios/auth/auth.service';
 })
 export class SobreMiComponent implements OnInit {
 
-  persona: Persona = new Persona("", "", "", "", "", "", "");
+  persona: Persona[] = [];
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private sPersona:SPersonaService, private tokenService: TokenService) { }
+
+  isLogged = false;
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.persona=data});
+
+    this.cargarPersona();
+
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }
+    else{
+      this.isLogged = false;
+    }
+    
   }
+
+  cargarPersona(): void{
+    this.sPersona.lista().subscribe(data => {this.persona = data;} )
+    
+  }
+
 
 }
 

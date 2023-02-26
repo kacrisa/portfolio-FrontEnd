@@ -9,20 +9,23 @@
 <div class="modal fade" [attr.id]="'editEdu-' + edu.id" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+
             <div class="modal-header">
                 <p class="modal-title fs-5">Editar info sobre educación</p>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
             <div class="m-3">
+
                 <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                     <div class="form-group">
-                        <label for="posicionE">Nombre de la formación:</label>
-                        <input type="text" class="form-control" id="posicionE" name="posicionE" [(ngModel)]="edu.tituloE" required>
+                        <label for="tituloE">Nombre de la formación:</label>
+                        <input type="text" class="form-control" id="tituloE" name="tituloE" [(ngModel)]="edu.tituloE" required>
                         
                     </div>
                     <div class="form-group">
-                        <label for="empresaE">Nombre de la escula:</label>
-                        <input type="text" class="form-control" id="empresaE" name="empresaE" [(ngModel)]="edu.escuelaE" required>
+                        <label for="escuelaE">Nombre de la escula:</label>
+                        <input type="text" class="form-control" id="escuelaE" name="escuelaE" [(ngModel)]="edu.escuelaE" required>
                     </div>
                     <div class="form-group">
                         <label for="dataE">Fecha de los estudios:</label>

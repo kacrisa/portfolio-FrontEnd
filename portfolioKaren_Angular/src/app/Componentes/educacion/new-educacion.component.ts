@@ -1,7 +1,6 @@
 import { Educacion } from './../../model/educacion';
 import { SEducacionService } from './../../servicios/portfolio_data/s-educacion.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-educacion',
@@ -16,7 +15,7 @@ export class NewEducacionComponent implements OnInit {
 	descripcionE : string = '';
 	imagenE : string = '';
 
-  constructor(private sEducacion: SEducacionService, private router: Router) { }
+  constructor(private sEducacion: SEducacionService) { }
 
   ngOnInit(): void {
   }

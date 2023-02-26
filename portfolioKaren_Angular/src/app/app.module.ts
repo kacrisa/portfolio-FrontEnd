@@ -20,7 +20,16 @@ import { AdminModalComponent } from './Componentes/admin-modal/admin-modal.compo
 import { AdminFilesComponent } from './Componentes/admin-files/admin-files.component';
 import { FormsModule } from '@angular/forms';
 import { NewExperienciaComponent } from './Componentes/experiencia/new-experiencia.component';
-import { EditExperienciaComponent } from './Componentes/experiencia/edit-experiencia.component'
+import { EditExperienciaComponent } from './Componentes/experiencia/edit-experiencia.component';
+import { NewEducacionComponent } from './Componentes/educacion/new-educacion.component';
+import { EditEducacionComponent } from './Componentes/educacion/edit-educacion.component';
+import { EditPersonaComponent } from './Componentes/sobre-mi/edit-persona.component';
+import { EditSkillsComponent } from './Componentes/skills/edit-skills.component';
+import { NewSkillsComponent } from './Componentes/skills/new-skills.component';
+import { NewIdiomasComponent } from './Componentes/skills/new-idiomas.component';
+import { EditIdiomasComponent } from './Componentes/skills/edit-idiomas.component';
+import { NewProyectosComponent } from './Componentes/proyectos/new-proyectos.component';
+import { EditProyectosComponent } from './Componentes/proyectos/edit-proyectos.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +49,15 @@ import { EditExperienciaComponent } from './Componentes/experiencia/edit-experie
     AdminFilesComponent,
     NewExperienciaComponent,
     EditExperienciaComponent,
+    NewEducacionComponent,
+    EditEducacionComponent,
+    EditPersonaComponent,
+    EditSkillsComponent,
+    NewSkillsComponent,
+    NewIdiomasComponent,
+    EditIdiomasComponent,
+    NewProyectosComponent,
+    EditProyectosComponent,
   ],
   imports: [
     BrowserModule,
