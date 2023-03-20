@@ -2,14 +2,15 @@ import { Habilidades } from './../../model/habilidades';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SHabilidadesService {
 
-  expURL = 'http://localhost:8080/habilidades/'
-
+  expURL = environment.apiURL + "habilidades/";
+  
   constructor(private http:HttpClient) { }
 
   public lista(): Observable<Habilidades[]>{

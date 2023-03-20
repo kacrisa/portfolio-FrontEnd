@@ -5,6 +5,7 @@ import { NuevoUsuario } from './../../model/nuevo-usuario';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -13,7 +14,8 @@ import { Router } from '@angular/router';
 
 export class AuthService {
   //URL de nuestra api
-  authURL = 'http://localhost:8080/auth/';
+
+  authURL = environment.apiURL + "auth/";
 
   //Inyectar dependencias en el constructor
   constructor(private http:HttpClient) {}

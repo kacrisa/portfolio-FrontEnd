@@ -2,12 +2,13 @@ import { Proyectos } from './../../model/proyectos';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SProyectosService {
-  expURL = 'http://localhost:8080/proyectos/'
+  expURL = environment.apiURL + "proyectos/";
 
   constructor(private http:HttpClient) { }
 
